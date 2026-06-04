@@ -622,8 +622,8 @@
     width: 28px;
     height: 28px;
   }
-  .ed-header.ed-header--style5 .ed-header__action {
-    display: none;
+  .ed-header__action {
+    display: none !important;
   }
 }
 
@@ -692,8 +692,18 @@
     padding: 0 5%;
   }
 
-  .ed-header.ed-header--style5 .ed-header__action {
-    display: none;
+  .ed-header__action {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 991.99px) {
+  .ed-header {
+    display: none !important;
+  }
+  .ed-hero {
+    margin-top: 0px !important;
+    padding-top: 40px !important;
   }
 }
 
