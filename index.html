@@ -174,15 +174,12 @@
 <!-- Category Dropdown -->
 <div class="ed-topbar__search-widget">
 <div class="ed-topbar__category">
-<select>
-<option data-display="All Categories">All Categories</option>
-<option value="1">Business</option>
-<option value="2">Marketing</option>
-<option value="3">Design</option>
-<option value="4">Finance</option>
-<option value="5">Lifestyle</option>
-<option value="6">Development</option>
-<option value="7">Photography</option>
+<select onchange="if(this.value) window.location.href=this.value;">
+<option data-display="All Classes" value="classes.html">All Classes</option>
+<option value="class-prek.html">Pre-K & Kindergarten</option>
+<option value="class-primary.html">Primary School (Class 1-5)</option>
+<option value="class-middle.html">Middle School (Class 6-8)</option>
+<option value="class-high.html">High School (Class 9-12)</option>
 </select>
 </div>
 <div class="ed-topbar__search">
