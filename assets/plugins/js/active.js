@@ -10,15 +10,34 @@
   "use strict";
   $(document).on("ready", function () {
     /*======================================================================================
-		  Header Sticky JS
+		  Header Sticky JS - Advanced Mobile Hide/Show
 	  =======================================================================================*/
+    var lastScroll = 0;
     $(window).on("scroll", function (event) {
       var scroll = $(window).scrollTop();
+      var header = $(".ed-header");
+      
       if (scroll < 100) {
-        $(".ed-header").removeClass("sticky");
+        header.removeClass("sticky");
+        header.css({"transform": "", "transition": ""});
       } else {
-        $(".ed-header").addClass("sticky");
+        header.addClass("sticky");
+        
+        // Mobile-specific hide on scroll down, show on scroll up
+        if ($(window).width() < 992) {
+            if (scroll > lastScroll && scroll > 150) {
+                // Scrolling down -> hide
+                header.css({"transform": "translateY(-100%)", "transition": "transform 0.4s ease"});
+            } else {
+                // Scrolling up -> show
+                header.css({"transform": "translateY(0)", "transition": "transform 0.4s ease"});
+            }
+        } else {
+            // Desktop -> always show when sticky
+            header.css({"transform": "translateY(0)", "transition": "transform 0.4s ease"});
+        }
       }
+      lastScroll = scroll <= 0 ? 0 : scroll;
     });
 
     /*======================================================================================
