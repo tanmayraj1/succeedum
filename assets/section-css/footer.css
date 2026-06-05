@@ -78,7 +78,8 @@
 
 .ed-footer__contact-info a {
   color: var(--ed-title-color);
-  font-size: 20px;
+  font-size: 15px;
+  word-break: break-word;
 }
 
 .ed-footer__contact-info a:hover {

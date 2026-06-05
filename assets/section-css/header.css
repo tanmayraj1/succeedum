@@ -710,3 +710,27 @@
 /*================================================================================================
     End Header CSS
 ===================================================================================================*/
+
+/* Custom mobile header size */
+@media only screen and (max-width: 767px) {
+  .ed-topbar__logo img {
+    height: 48px !important;
+    max-width: 200px !important;
+  }
+  .ed-topbar {
+    padding: 20px 0px !important;
+  }
+  .ed-topbar__info .d-lg-none.btn {
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+  }
+  .mobile-menu-offcanvas-toggler {
+    transform: scale(1.2);
+  }
+}
+
+/* Ensure header contact numbers stay inline */
+.ed-header__contact li,
+.ed-header__contact li a {
+    white-space: nowrap !important;
+}
