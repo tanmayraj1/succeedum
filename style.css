@@ -25,3 +25,6 @@
 @import "assets/section-css/sidebars.css";
 @import "assets/section-css/auth-pages.css";
 @import "assets/section-css/footer.css";
+
+/* Fix for breadcrumbs overlap */
+.ed-breadcrumbs { padding-top: 150px !important; }

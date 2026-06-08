@@ -1,0 +1,935 @@
+{
+  "us": [
+    {
+      "id": "sat",
+      "title": "SAT Prep Tutoring | Expert SAT Preparation Classes | Succeedum",
+      "h1": "SAT Preparation Classes",
+      "description": "Achieve your target SAT score with expert-led online tutoring designed for today's Digital SAT. Our tutors help students strengthen Mathematics, Reading, and Writing skills while mastering test-taking strategies.",
+      "sections": [
+        {
+          "title": "What We Cover",
+          "items": [
+            "SAT Math",
+            "Advanced Algebra",
+            "Problem Solving & Data Analysis",
+            "Geometry & Trigonometry",
+            "Reading Comprehension",
+            "Grammar & Writing",
+            "Full-Length Practice Tests"
+          ]
+        },
+        {
+          "title": "Why Choose Succeedum?",
+          "items": [
+            "One-to-one and small group classes",
+            "Personalized study plans",
+            "Weekly progress reports",
+            "Flexible scheduling",
+            "Experienced SAT instructors"
+          ]
+        }
+      ],
+      "cta": "Book Your Free SAT Assessment Today"
+    },
+    {
+      "id": "act",
+      "title": "ACT Prep Tutoring | Expert ACT Preparation Classes | Succeedum",
+      "h1": "ACT Preparation Classes",
+      "description": "Prepare for success in the ACT with structured lessons focused on improving speed, accuracy, and confidence.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "ACT Math",
+            "ACT English",
+            "ACT Reading",
+            "ACT Science",
+            "Test Strategies",
+            "Time Management Techniques"
+          ]
+        },
+        {
+          "title": "Benefits",
+          "items": [
+            "Diagnostic assessment",
+            "Customized learning plans",
+            "Regular mock tests",
+            "Detailed performance analysis"
+          ]
+        }
+      ],
+      "cta": "Start Your ACT Journey with Succeedum"
+    },
+    {
+      "id": "pre-algebra",
+      "title": "Pre-Algebra Tutoring | Build Strong Math Foundations | Succeedum",
+      "h1": "Build Strong Math Foundations",
+      "description": "Our Pre-Algebra program helps students develop confidence before moving into Algebra 1.",
+      "sections": [
+        {
+          "title": "Topics Covered",
+          "items": [
+            "Integers",
+            "Fractions & Decimals",
+            "Ratios & Proportions",
+            "Percentages",
+            "Basic Equations",
+            "Exponents",
+            "Word Problems"
+          ]
+        },
+        {
+          "title": "Ideal For",
+          "items": [
+            "Grades 5\u20138 students",
+            "Students needing foundational support",
+            "Students preparing for Algebra 1"
+          ]
+        }
+      ],
+      "cta": "Strengthen Core Math Skills Today"
+    },
+    {
+      "id": "algebra-1",
+      "title": "Algebra 1 Tutoring | Master Algebra 1 Online | Succeedum",
+      "h1": "Master Algebra 1",
+      "description": "Algebra 1 forms the foundation of higher mathematics. Our tutors make concepts easy to understand through interactive lessons and practice.",
+      "sections": [
+        {
+          "title": "Topics Covered",
+          "items": [
+            "Linear Equations",
+            "Graphing",
+            "Functions",
+            "Systems of Equations",
+            "Polynomials",
+            "Factoring",
+            "Inequalities"
+          ]
+        },
+        {
+          "title": "Outcomes",
+          "items": [
+            "Better grades",
+            "Stronger problem-solving skills",
+            "State test readiness"
+          ]
+        }
+      ],
+      "cta": "Book an Algebra 1 Trial Class"
+    },
+    {
+      "id": "algebra-2",
+      "title": "Algebra 2 Tutoring | Advanced Algebra Made Simple | Succeedum",
+      "h1": "Advanced Algebra Made Simple",
+      "description": "Our Algebra 2 program prepares students for advanced high school mathematics and standardized tests.",
+      "sections": [
+        {
+          "title": "Topics Covered",
+          "items": [
+            "Quadratic Functions",
+            "Exponential Functions",
+            "Logarithms",
+            "Rational Expressions",
+            "Complex Numbers",
+            "Sequences & Series",
+            "Trigonometric Foundations"
+          ]
+        },
+        {
+          "title": "Perfect For",
+          "items": [
+            "High school students",
+            "SAT/ACT preparation",
+            "College readiness"
+          ]
+        }
+      ],
+      "cta": "Get Personalized Algebra 2 Support"
+    },
+    {
+      "id": "calculus",
+      "title": "Calculus Tutoring | High School & College Calculus | Succeedum",
+      "h1": "Calculus Tutoring for High School & College Students",
+      "description": "Learn Calculus with confidence through step-by-step instruction and real-world applications.",
+      "sections": [
+        {
+          "title": "Topics Covered",
+          "items": [
+            "Limits",
+            "Derivatives",
+            "Applications of Derivatives",
+            "Integrals",
+            "Differential Equations",
+            "AP Calculus Preparation"
+          ]
+        },
+        {
+          "title": "Why Students Succeed",
+          "items": [
+            "Expert tutors",
+            "Simplified explanations",
+            "Practice-focused learning",
+            "Exam preparation support"
+          ]
+        }
+      ],
+      "cta": "Start Calculus with Confidence"
+    },
+    {
+      "id": "reading-ela",
+      "title": "Reading & ELA Tutoring | English Language Arts | Succeedum",
+      "h1": "Reading and English Language Arts",
+      "description": "Develop strong reading, writing, and comprehension skills with personalized ELA tutoring.",
+      "sections": [
+        {
+          "title": "Skills Covered",
+          "items": [
+            "Reading Comprehension",
+            "Vocabulary Development",
+            "Grammar",
+            "Essay Writing",
+            "Critical Thinking",
+            "Literary Analysis"
+          ]
+        },
+        {
+          "title": "Suitable For",
+          "items": [
+            "Elementary School",
+            "Middle School",
+            "High School"
+          ]
+        }
+      ],
+      "cta": "Unlock Your Child's Reading Potential"
+    },
+    {
+      "id": "science",
+      "title": "Science Tutoring | Online Science Tutors | Succeedum",
+      "h1": "Online Science Tutoring",
+      "description": "Our science programs help students understand complex concepts through engaging instruction.",
+      "sections": [
+        {
+          "title": "Subjects Available",
+          "items": [
+            "General Science",
+            "Biology",
+            "Chemistry",
+            "Physics",
+            "Earth Science"
+          ]
+        },
+        {
+          "title": "Benefits",
+          "items": [
+            "Concept-based learning",
+            "Homework help",
+            "Exam preparation",
+            "Interactive sessions"
+          ]
+        }
+      ],
+      "cta": "Discover the Scientist Within"
+    },
+    {
+      "id": "new-york-regents",
+      "title": "New York Regents Prep | NY Regents Tutoring | Succeedum",
+      "h1": "New York Regents Exam Preparation",
+      "description": "Targeted tutoring for students preparing for Regents examinations.",
+      "sections": [
+        {
+          "title": "Regents Subjects",
+          "items": [
+            "Algebra I",
+            "Algebra II",
+            "Geometry",
+            "Living Environment",
+            "Chemistry",
+            "Physics",
+            "Earth Science"
+          ]
+        },
+        {
+          "title": "What We Offer",
+          "items": [
+            "Regents-style practice questions",
+            "Exam strategies",
+            "Topic-wise revision",
+            "Mock exams"
+          ]
+        }
+      ],
+      "cta": "Ace Your Regents Exams"
+    },
+    {
+      "id": "florida-fast",
+      "title": "FAST Assessment Prep | Florida FAST Test Preparation | Succeedum",
+      "h1": "Florida FAST Test Preparation",
+      "description": "Prepare confidently for Florida's FAST assessments with personalized tutoring.",
+      "sections": [
+        {
+          "title": "Focus Areas",
+          "items": [
+            "FAST Reading",
+            "FAST Mathematics",
+            "Grade-level standards",
+            "Practice assessments"
+          ]
+        }
+      ],
+      "cta": "Boost Your FAST Scores"
+    },
+    {
+      "id": "eoc-prep",
+      "title": "EOC Exam Preparation | End-of-Course Test Prep | Succeedum",
+      "h1": "End-of-Course (EOC) Test Prep",
+      "description": "Comprehensive support for state EOC examinations.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "Algebra 1 EOC",
+            "Geometry EOC",
+            "Biology EOC",
+            "English EOC"
+          ]
+        },
+        {
+          "title": "Features",
+          "items": [
+            "Targeted review",
+            "Practice tests",
+            "Performance tracking"
+          ]
+        }
+      ],
+      "cta": "Be Exam Ready"
+    },
+    {
+      "id": "texas-staar",
+      "title": "Texas STAAR Prep | STAAR Test Preparation | Succeedum",
+      "h1": "Texas STAAR Test Preparation",
+      "description": "Help your child excel in STAAR assessments through expert coaching.",
+      "sections": [
+        {
+          "title": "Areas Covered",
+          "items": [
+            "STAAR Math",
+            "STAAR Reading",
+            "STAAR Science",
+            "STAAR Writing"
+          ]
+        },
+        {
+          "title": "Why Parents Choose Us",
+          "items": [
+            "Personalized instruction",
+            "State-standard alignment",
+            "Progress monitoring"
+          ]
+        }
+      ],
+      "cta": "Prepare for STAAR Success"
+    },
+    {
+      "id": "california-caaspp",
+      "title": "CAASPP Preparation | California CAASPP Test Prep | Succeedum",
+      "h1": "California CAASPP Test Prep",
+      "description": "Targeted tutoring for California students preparing for CAASPP assessments.",
+      "sections": [
+        {
+          "title": "Focus Areas",
+          "items": [
+            "Mathematics",
+            "English Language Arts",
+            "Critical Thinking",
+            "Problem Solving"
+          ]
+        }
+      ],
+      "cta": "Improve Your CAASPP Performance"
+    },
+    {
+      "id": "massachusetts-mcas",
+      "title": "MCAS Preparation | Massachusetts MCAS Test Prep | Succeedum",
+      "h1": "Massachusetts MCAS Test Prep",
+      "description": "Build confidence and improve scores through expert MCAS preparation.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "Math",
+            "English Language Arts",
+            "Science & Technology"
+          ]
+        },
+        {
+          "title": "Features",
+          "items": [
+            "Practice tests",
+            "Personalized support",
+            "Skill-gap analysis"
+          ]
+        }
+      ],
+      "cta": "Achieve Higher MCAS Scores"
+    },
+    {
+      "id": "virginia-sol",
+      "title": "SOL Preparation | Virginia SOL Test Prep | Succeedum",
+      "h1": "Virginia SOL Test Preparation",
+      "description": "Prepare for Virginia Standards of Learning assessments with expert online tutoring.",
+      "sections": [
+        {
+          "title": "SOL Subjects",
+          "items": [
+            "Mathematics",
+            "Reading",
+            "Science",
+            "Writing"
+          ]
+        },
+        {
+          "title": "Why Succeedum?",
+          "items": [
+            "Certified educators",
+            "Flexible online classes",
+            "Individual attention",
+            "Proven teaching methods"
+          ]
+        }
+      ],
+      "cta": "Excel in Your SOL Exams"
+    }
+  ],
+  "uk": [
+    {
+      "id": "key-stage-1",
+      "title": "Key Stage 1 Tutoring | Ages 5-7 | Succeedum",
+      "h1": "Key Stage 1 (Ages 5\u20137)",
+      "description": "Build strong foundations in literacy, numeracy, and scientific thinking through engaging and interactive lessons.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "English",
+            "Mathematics",
+            "Science"
+          ]
+        },
+        {
+          "title": "Key Skills Developed",
+          "items": [
+            "Reading fluency",
+            "Phonics",
+            "Basic arithmetic",
+            "Problem-solving",
+            "Scientific observation"
+          ]
+        }
+      ],
+      "cta": "Give Your Child a Strong Start"
+    },
+    {
+      "id": "key-stage-2",
+      "title": "Key Stage 2 Tutoring | Ages 7-11 | Succeedum",
+      "h1": "Key Stage 2 (Ages 7\u201311)",
+      "description": "Support your child's academic growth and prepare them for SATs and secondary school success.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "English",
+            "Mathematics",
+            "Science",
+            "History",
+            "Geography"
+          ]
+        },
+        {
+          "title": "Focus Areas",
+          "items": [
+            "Reading comprehension",
+            "Writing skills",
+            "Arithmetic and reasoning",
+            "Scientific investigation",
+            "Humanities knowledge"
+          ]
+        }
+      ],
+      "cta": "Prepare for Academic Success"
+    },
+    {
+      "id": "sats",
+      "title": "SATs Preparation | KS2 SATs Tutors | Succeedum",
+      "h1": "KS2 SATs Preparation (Age 11)",
+      "description": "Expert tutoring to help Year 6 students approach their SATs with confidence.",
+      "sections": [
+        {
+          "title": "SATs Subjects",
+          "items": [
+            "English Reading",
+            "Grammar, Punctuation & Spelling",
+            "Mathematics Arithmetic",
+            "Mathematics Reasoning"
+          ]
+        },
+        {
+          "title": "Our Approach",
+          "items": [
+            "Practice papers",
+            "Time-management techniques",
+            "Targeted revision",
+            "Confidence building"
+          ]
+        }
+      ],
+      "cta": "Boost SATs Performance"
+    },
+    {
+      "id": "key-stage-3",
+      "title": "Key Stage 3 Tutoring | Ages 11-14 | Succeedum",
+      "h1": "Key Stage 3 (Ages 11\u201314)",
+      "description": "Prepare students for GCSE success through structured learning and deeper subject understanding.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "English",
+            "Mathematics",
+            "Science",
+            "Languages",
+            "History",
+            "Geography"
+          ]
+        },
+        {
+          "title": "Benefits",
+          "items": [
+            "Strong academic foundations",
+            "GCSE readiness",
+            "Improved critical thinking",
+            "Enhanced analytical skills"
+          ]
+        }
+      ],
+      "cta": "Build Confidence Before GCSEs"
+    },
+    {
+      "id": "gcse",
+      "title": "GCSE Tutoring | Expert GCSE Preparation | Succeedum",
+      "h1": "GCSE Preparation Classes",
+      "description": "GCSEs are among the most important qualifications in the UK education system. Our tutors help students achieve their highest potential.",
+      "sections": [
+        {
+          "title": "Core Subjects",
+          "items": [
+            "English Language",
+            "English Literature",
+            "Mathematics",
+            "Combined Science",
+            "Triple Science"
+          ]
+        },
+        {
+          "title": "Additional Subjects",
+          "items": [
+            "Computer Science",
+            "Psychology",
+            "History",
+            "Geography",
+            "Business Studies",
+            "Economics"
+          ]
+        },
+        {
+          "title": "Exam Boards Supported",
+          "items": [
+            "AQA",
+            "Pearson Edexcel",
+            "OCR",
+            "WJEC",
+            "CCEA",
+            "SQA"
+          ]
+        }
+      ],
+      "cta": "Achieve Your GCSE Goals"
+    },
+    {
+      "id": "a-level",
+      "title": "A Level Tutoring | A Level Preparation | Succeedum",
+      "h1": "A Level Preparation",
+      "description": "A Levels are specialised qualifications studied after GCSEs and are essential for university admissions and career pathways.",
+      "sections": [
+        {
+          "title": "Popular A Level Subjects",
+          "items": [
+            "Mathematics",
+            "Further Mathematics",
+            "Biology",
+            "Chemistry",
+            "Physics",
+            "Psychology",
+            "Computer Science",
+            "Economics",
+            "English Literature"
+          ]
+        },
+        {
+          "title": "University Pathways",
+          "items": [
+            "Medicine (Biology, Chemistry, Maths)",
+            "Engineering (Maths, Physics, Further Maths)",
+            "Business & Economics (Maths, Economics, Business)"
+          ]
+        }
+      ],
+      "cta": "Prepare for University Success"
+    },
+    {
+      "id": "ocr",
+      "title": "OCR Exam Preparation | GCSE and A Level | Succeedum",
+      "h1": "OCR GCSE and A Level Tutoring",
+      "description": "OCR (Oxford Cambridge and RSA Examinations) is one of the UK's leading exam boards.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "Biology",
+            "Chemistry",
+            "Physics",
+            "Mathematics",
+            "Further Mathematics",
+            "Computer Science",
+            "Psychology",
+            "English"
+          ]
+        },
+        {
+          "title": "What We Provide",
+          "items": [
+            "Specification-based teaching",
+            "Exam technique coaching",
+            "Past paper practice",
+            "Topic-by-topic revision"
+          ]
+        }
+      ],
+      "cta": "Master OCR Examinations"
+    },
+    {
+      "id": "11-plus",
+      "title": "11 Plus Preparation | 11+ Entrance Exams | Succeedum",
+      "h1": "11+ Entrance Exam Tutoring",
+      "description": "Prepare for selective grammar schools and independent schools with expert 11+ coaching.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "Mathematics",
+            "English",
+            "Verbal Reasoning",
+            "Non-Verbal Reasoning"
+          ]
+        },
+        {
+          "title": "Suitable For",
+          "items": [
+            "Grammar School Entry",
+            "Scholarship Preparation",
+            "Independent School Admissions"
+          ]
+        }
+      ],
+      "cta": "Maximise Your 11+ Potential"
+    },
+    {
+      "id": "independent-school-exams",
+      "title": "Independent School Entrance Exams | Succeedum",
+      "h1": "Private School Admissions Preparation",
+      "description": "Specialist tutoring for competitive independent school entrance examinations.",
+      "sections": [
+        {
+          "title": "Exams Supported",
+          "items": [
+            "ISEB Common Pre-Test",
+            "Common Entrance",
+            "School-Specific Entrance Tests",
+            "Scholarship Exams"
+          ]
+        },
+        {
+          "title": "Target Schools",
+          "items": [
+            "Eton",
+            "Harrow",
+            "Winchester",
+            "Westminster",
+            "St Paul's",
+            "Other leading independent schools"
+          ]
+        }
+      ],
+      "cta": "Prepare for Competitive Admissions"
+    },
+    {
+      "id": "7-plus-8-plus-13-plus",
+      "title": "7+, 8+, 11+, and 13+ Entrance Exams | Succeedum",
+      "h1": "School Entrance Exam Preparation",
+      "description": "Expert tutoring for students seeking admission to selective schools.",
+      "sections": [
+        {
+          "title": "7+ and 8+ Exams",
+          "items": [
+            "English",
+            "Mathematics",
+            "Reasoning"
+          ]
+        },
+        {
+          "title": "11+ and 13+ Exams",
+          "items": [
+            "English",
+            "Mathematics",
+            "Science",
+            "Humanities",
+            "Verbal Reasoning",
+            "Non-Verbal Reasoning"
+          ]
+        }
+      ],
+      "cta": "Build Exam Confidence Early"
+    },
+    {
+      "id": "maths-olympiad",
+      "title": "UK Mathematics Olympiad Programs | Succeedum",
+      "h1": "UK Mathematics Challenge & Olympiad Preparation",
+      "description": "Develop advanced problem-solving skills through specialist olympiad coaching.",
+      "sections": [
+        {
+          "title": "Competitions Covered",
+          "items": [
+            "UKMT Intermediate Maths Challenge",
+            "Cayley Olympiad",
+            "Hamilton Olympiad",
+            "Maclaurin Olympiad",
+            "British Mathematical Olympiad (BMO)",
+            "International Olympiad preparation"
+          ]
+        },
+        {
+          "title": "Skills Developed",
+          "items": [
+            "Advanced reasoning",
+            "Proof writing",
+            "Mathematical creativity"
+          ]
+        }
+      ],
+      "cta": "Train Like a Future Olympian"
+    },
+    {
+      "id": "informatics-olympiad",
+      "title": "British Informatics Olympiad | CS Preparation | Succeedum",
+      "h1": "Computer Science Olympiad Preparation",
+      "description": "Prepare for one of the UK's most prestigious programming competitions.",
+      "sections": [
+        {
+          "title": "Topics Covered",
+          "items": [
+            "Algorithms",
+            "Programming Logic",
+            "Computational Thinking",
+            "Problem Solving",
+            "Competitive Programming"
+          ]
+        },
+        {
+          "title": "Suitable For",
+          "items": [
+            "Aspiring software engineers",
+            "Competitive coders",
+            "Olympiad participants"
+          ]
+        }
+      ],
+      "cta": "Excel in Informatics Competitions"
+    },
+    {
+      "id": "physics-olympiad",
+      "title": "British Physics Olympiad | Physics Coaching | Succeedum",
+      "h1": "Physics Olympiad Preparation",
+      "description": "Advanced coaching for ambitious physics students.",
+      "sections": [
+        {
+          "title": "Competitions Covered",
+          "items": [
+            "AS Challenge",
+            "Round 1",
+            "Round 2"
+          ]
+        },
+        {
+          "title": "Topics Included",
+          "items": [
+            "Mechanics",
+            "Electricity",
+            "Waves",
+            "Thermal Physics",
+            "Problem Solving"
+          ]
+        }
+      ],
+      "cta": "Take Physics Beyond the Classroom"
+    },
+    {
+      "id": "chemistry-olympiad",
+      "title": "UK Chemistry Olympiad | Chemistry Coaching | Succeedum",
+      "h1": "Chemistry Olympiad Coaching",
+      "description": "Prepare for challenging chemistry competitions and university admissions.",
+      "sections": [
+        {
+          "title": "Core Focus",
+          "items": [
+            "Advanced organic chemistry",
+            "Inorganic concepts",
+            "Physical chemistry",
+            "Analytical skills"
+          ]
+        }
+      ],
+      "cta": "Challenge Your Chemistry Skills"
+    }
+  ],
+  "uae": [
+    {
+      "id": "british-curriculum",
+      "title": "British Curriculum Tutoring UAE | Succeedum",
+      "h1": "British Curriculum Tutoring in the UAE",
+      "description": "Expert online tutoring aligned with the National Curriculum for England. We support UAE students from Foundation Stage through to A-Levels.",
+      "sections": [
+        {
+          "title": "What We Offer",
+          "items": [
+            "KS1 to KS3 Foundation",
+            "IGCSE & GCSE Preparation",
+            "AS and A-Level Mastery",
+            "Experienced British Curriculum Tutors"
+          ]
+        }
+      ],
+      "cta": "Book a Free British Curriculum Trial"
+    },
+    {
+      "id": "american-curriculum",
+      "title": "American Curriculum Tutoring UAE | Succeedum",
+      "h1": "American Curriculum Tutoring",
+      "description": "Comprehensive tutoring for students enrolled in American curriculum schools in the UAE, covering Common Core State Standards and AP courses.",
+      "sections": [
+        {
+          "title": "Our Focus Areas",
+          "items": [
+            "Common Core Math & ELA",
+            "Advanced Placement (AP) Courses",
+            "SAT & ACT Preparation",
+            "GPA Improvement Strategies"
+          ]
+        }
+      ],
+      "cta": "Start Your American Curriculum Trial"
+    },
+    {
+      "id": "ib-curriculum",
+      "title": "IB Curriculum Tutoring UAE | PYP, MYP, DP | Succeedum",
+      "h1": "International Baccalaureate (IB) Tutoring",
+      "description": "Specialized tutoring for IB students in the UAE. We foster inquiry-based learning for PYP, MYP, and the rigorous Diploma Programme (DP).",
+      "sections": [
+        {
+          "title": "IB Programmes Supported",
+          "items": [
+            "Primary Years Programme (PYP)",
+            "Middle Years Programme (MYP)",
+            "Diploma Programme (DP) - HL & SL",
+            "Extended Essay (EE) & TOK Support"
+          ]
+        }
+      ],
+      "cta": "Book an IB Consultation"
+    },
+    {
+      "id": "cbse-curriculum",
+      "title": "CBSE Curriculum Tutoring UAE | Succeedum",
+      "h1": "CBSE Curriculum Tutoring",
+      "description": "Dedicated coaching for Indian curriculum students in the UAE, preparing them for board exams and competitive entrance tests.",
+      "sections": [
+        {
+          "title": "Core Offerings",
+          "items": [
+            "Classes 1 to 12 Subjects",
+            "Class 10 & 12 Board Exam Prep",
+            "NCERT Syllabus Alignment",
+            "Mock Tests & Past Papers"
+          ]
+        }
+      ],
+      "cta": "Enroll for CBSE Tutoring"
+    },
+    {
+      "id": "icse-curriculum",
+      "title": "ICSE Curriculum Tutoring UAE | Succeedum",
+      "h1": "ICSE Curriculum Tutoring",
+      "description": "In-depth tutoring for ICSE and ISC students, focusing on comprehensive understanding and analytical skills.",
+      "sections": [
+        {
+          "title": "Why Choose Us",
+          "items": [
+            "Expert ICSE Tutors",
+            "Detailed Concept Explanations",
+            "Board Exam Strategies",
+            "Continuous Assessment"
+          ]
+        }
+      ],
+      "cta": "Start ICSE Preparation"
+    },
+    {
+      "id": "igcse",
+      "title": "IGCSE Tutoring UAE | Expert IGCSE Tutors | Succeedum",
+      "h1": "IGCSE Preparation Classes",
+      "description": "Achieve top grades in your Cambridge or Edexcel IGCSE exams with our specialized, subject-expert tutors.",
+      "sections": [
+        {
+          "title": "Subjects Covered",
+          "items": [
+            "Mathematics & Further Maths",
+            "Physics, Chemistry, Biology",
+            "Computer Science",
+            "Business Studies & Economics"
+          ]
+        }
+      ],
+      "cta": "Ace Your IGCSE Exams"
+    },
+    {
+      "id": "emsat",
+      "title": "EmSAT Preparation UAE | Succeedum",
+      "h1": "EmSAT Test Preparation",
+      "description": "Targeted preparation for the Emirates Standardized Test (EmSAT) to help you secure admission into top UAE universities.",
+      "sections": [
+        {
+          "title": "EmSAT Focus Areas",
+          "items": [
+            "EmSAT English",
+            "EmSAT Math",
+            "EmSAT Physics",
+            "EmSAT Chemistry & Biology",
+            "EmSAT Computer Science"
+          ]
+        }
+      ],
+      "cta": "Prepare for EmSAT Success"
+    }
+  ]
+}
