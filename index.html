@@ -119,54 +119,83 @@
 </head>
 <body class="element-wrapper">
 <!-- Geo-IP Detection Banner & Redirect -->
-<div id="geo-banner" style="display: none; background: #1a1a1a; color: white; text-align: center; padding: 12px; font-weight: 500; font-size: 14px; position: relative; z-index: 1000;">
-    It looks like you're browsing from <span id="geo-country-name" style="font-weight: 700; color: #00d084;">the UK</span>. <a id="geo-country-link" href="uk/index.html" style="color: #ffffff; text-decoration: underline; margin-left: 10px; font-weight: 600;">View our UK Programs <i class="fi fi-rr-arrow-small-right" style="position:relative; top:2px;"></i></a>
-    <button onclick="document.getElementById('geo-banner').style.display='none'" style="position: absolute; right: 15px; top: 12px; background: transparent; border: none; color: white;"><i class="fi-rr-cross"></i></button>
+<div id="geo-banner" style="display: none; background: #2467ec; color: white; text-align: center; padding: 14px 20px; font-weight: 500; font-size: 15px; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    It looks like you're browsing from <span id="geo-country-name" style="font-weight: 700;">the UK 🇬🇧</span> — Would you like to view our <span id="geo-programs">UK</span> Programs? 
+    <a id="geo-country-link" href="uk/index.html" style="background: white; color: #2467ec; padding: 6px 16px; border-radius: 20px; text-decoration: none; margin-left: 15px; font-weight: 700; font-size: 13px; display: inline-block; transition: all 0.3s;">Yes, take me there</a>
+    <button onclick="document.getElementById('geo-banner').style.display='none'; sessionStorage.setItem('geo_banner_handled', 'true'); document.body.style.paddingTop='0';" style="background: transparent; border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; color: white; padding: 6px 16px; font-weight: 600; font-size: 13px; margin-left: 10px; cursor: pointer; transition: all 0.3s;">Stay on Global</button>
 </div>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" style="display: none; background: #1a1a1a; color: white; padding: 20px; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9998; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <span style="font-size: 14px; color: #ddd; max-width: 800px; text-align: center;">We use cookies to improve your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All Cookies", you agree to the storing of cookies on your device.</span>
+    <div>
+        <button onclick="acceptCookies()" style="background: #00d084; color: #1a1a1a; border: none; padding: 8px 24px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 14px; margin-right: 10px; transition: background 0.3s;">Accept All Cookies</button>
+        <button onclick="declineCookies()" style="background: transparent; border: 1px solid #777; color: #ddd; padding: 8px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s;">Decline</button>
+    </div>
+</div>
+
 <script>
+    // Geo-IP Logic
     fetch('https://ipapi.co/json/')
         .then(res => res.json())
         .then(data => {
             const country = data.country_code;
             
-            // Redirect once per session
-            if (!sessionStorage.getItem('geo_redirected')) {
-                sessionStorage.setItem('geo_redirected', 'true');
+            // Only show banner if we haven't already dismissed or accepted
+            if (!sessionStorage.getItem('geo_banner_handled')) {
+                const banner = document.getElementById('geo-banner');
+                const nameSpan = document.getElementById('geo-country-name');
+                const progSpan = document.getElementById('geo-programs');
+                const linkSpan = document.getElementById('geo-country-link');
+                
+                let showBanner = false;
+
                 if (country === 'GB') {
-                    window.location.href = 'uk/index.html';
-                    return;
+                    nameSpan.innerText = 'the UK 🇬🇧';
+                    progSpan.innerText = 'UK';
+                    linkSpan.href = 'uk/index.html';
+                    showBanner = true;
                 } else if (country === 'US') {
-                    window.location.href = 'us/index.html';
-                    return;
+                    nameSpan.innerText = 'the USA 🇺🇸';
+                    progSpan.innerText = 'USA';
+                    linkSpan.href = 'us/index.html';
+                    showBanner = true;
                 } else if (country === 'AE') {
-                    window.location.href = 'uae/index.html';
-                    return;
+                    nameSpan.innerText = 'the UAE 🇦🇪';
+                    progSpan.innerText = 'UAE';
+                    linkSpan.href = 'uae/index.html';
+                    showBanner = true;
                 }
-            }
-            
-            // If they are back on the homepage or no redirect happened, show the banner
-            const banner = document.getElementById('geo-banner');
-            const nameSpan = document.getElementById('geo-country-name');
-            const linkSpan = document.getElementById('geo-country-link');
-            
-            if (country === 'GB') {
-                nameSpan.innerText = 'the UK';
-                linkSpan.href = 'uk/index.html';
-                linkSpan.innerHTML = 'View our UK Programs <i class="fi fi-rr-arrow-small-right" style="position:relative; top:2px;"></i>';
-                banner.style.display = 'block';
-            } else if (country === 'US') {
-                nameSpan.innerText = 'the USA';
-                linkSpan.href = 'us/index.html';
-                linkSpan.innerHTML = 'View our USA Programs <i class="fi fi-rr-arrow-small-right" style="position:relative; top:2px;"></i>';
-                banner.style.display = 'block';
-            } else if (country === 'AE') {
-                nameSpan.innerText = 'the UAE';
-                linkSpan.href = 'uae/index.html';
-                linkSpan.innerHTML = 'View our UAE Programs <i class="fi fi-rr-arrow-small-right" style="position:relative; top:2px;"></i>';
-                banner.style.display = 'block';
+
+                if (showBanner) {
+                    banner.style.display = 'block';
+                    // Optional: Push body down so fixed banner doesn't cover header
+                    document.body.style.paddingTop = banner.offsetHeight + 'px';
+                    
+                    // Handle button clicks to remember state
+                    linkSpan.addEventListener('click', function() {
+                        sessionStorage.setItem('geo_banner_handled', 'true');
+                    });
+                }
             }
         })
         .catch(err => console.log('Geo-IP error', err));
+
+    // Cookie Consent Logic
+    const cookieConsent = document.getElementById('cookie-consent');
+    if (!localStorage.getItem('cookies_accepted')) {
+        cookieConsent.style.display = 'flex';
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookies_accepted', 'true');
+        cookieConsent.style.display = 'none';
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookies_accepted', 'false');
+        cookieConsent.style.display = 'none';
+    }
 </script>
 <!-- Start Preloader  -->
 <div id="preloader">
@@ -2062,8 +2091,7 @@
 <div class="row">
 <div class="col-12">
 <p class="ed-footer__copyright-text">
-                                        Copyright 2024 Succeedum | Developed By
-                                        <a href="https://themeforest.net/user/bizantheme" target="_blank">BizanTheme</a>. All Rights Reserved
+                                        © 2026 Succeedum. All Rights Reserved | Website Developed by <a href="https://rytfulmedia.in/" target="_blank" style="color: #2467ec; font-weight: 600; text-decoration: none;">Rytful Media</a>
                                     </p>
 </div>
 </div>
