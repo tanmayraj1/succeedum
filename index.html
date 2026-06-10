@@ -137,30 +137,47 @@
 </div>
 
 <script>
-    // Geo-IP Auto-Redirect Logic
+    // Geo-IP Routing Banner Logic
     fetch('https://get.geojs.io/v1/ip/country.json')
         .then(res => res.json())
         .then(data => {
             const country = data.country;
             
-            // Only redirect if we haven't already handled it this session
-            if (!sessionStorage.getItem('geo_redirected')) {
-                let targetUrl = '';
+            // Only show banner if we haven't already dismissed or accepted
+            if (!sessionStorage.getItem('geo_banner_handled')) {
+                const banner = document.getElementById('geo-banner');
+                const nameSpan = document.getElementById('geo-country-name');
+                const progSpan = document.getElementById('geo-programs');
+                const linkSpan = document.getElementById('geo-country-link');
+                
+                let showBanner = false;
 
                 if (country === 'GB') {
-                    targetUrl = 'uk/index.html';
+                    nameSpan.innerText = 'the UK 🇬🇧';
+                    progSpan.innerText = 'UK';
+                    linkSpan.href = 'uk/index.html';
+                    showBanner = true;
                 } else if (country === 'US') {
-                    targetUrl = 'us/index.html';
+                    nameSpan.innerText = 'the USA 🇺🇸';
+                    progSpan.innerText = 'USA';
+                    linkSpan.href = 'us/index.html';
+                    showBanner = true;
                 } else if (country === 'AE') {
-                    targetUrl = 'uae/index.html';
+                    nameSpan.innerText = 'the UAE 🇦🇪';
+                    progSpan.innerText = 'UAE';
+                    linkSpan.href = 'uae/index.html';
+                    showBanner = true;
                 }
 
-                if (targetUrl !== '') {
-                    sessionStorage.setItem('geo_redirected', 'true');
-                    window.location.href = targetUrl;
-                } else {
-                    // If they are not from UK, US, or UAE (e.g. India), they stay on global
-                    sessionStorage.setItem('geo_redirected', 'true');
+                if (showBanner) {
+                    banner.style.display = 'flex';
+                    // Optional: Push body down so fixed banner doesn't cover header
+                    document.body.style.paddingTop = banner.offsetHeight + 'px';
+                    
+                    // Handle button clicks to remember state
+                    linkSpan.addEventListener('click', function() {
+                        sessionStorage.setItem('geo_banner_handled', 'true');
+                    });
                 }
             }
         })
