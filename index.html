@@ -78,6 +78,11 @@
         height: auto !important;
         overflow: visible !important;
     }
+    @media only screen and (max-width: 991.99px) {
+        .ed-hero.ed-hero--style4 {
+            padding-top: 140px !important;
+        }
+    }
     
     @keyframes float1 {
         0% { transform: translateY(0px); }
@@ -119,7 +124,7 @@
 </head>
 <body class="element-wrapper">
 <!-- Geo-IP Detection Banner & Redirect -->
-<div id="geo-banner" style="display: none; background: #2467ec; color: white; padding: 14px 20px; font-weight: 500; font-size: 14px; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; line-height: 1.4;">
+<div id="geo-banner" style="display: none; background: #2467ec; color: white; padding: 14px 20px; font-weight: 500; font-size: 14px; position: relative; width: 100%; z-index: 9999; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; line-height: 1.4;">
     <div style="text-align: center; margin-bottom: 4px;">It looks like you're browsing from <span id="geo-country-name" style="font-weight: 700;">the UK 🇬🇧</span> — Would you like to view our <span id="geo-programs">UK</span> Programs?</div>
     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <a id="geo-country-link" href="uk/index.html" style="background: white; color: #2467ec; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 13px; display: inline-block; transition: all 0.3s; white-space: nowrap;">Yes, take me there</a>
@@ -172,7 +177,7 @@
                 if (showBanner) {
                     banner.style.display = 'flex';
                     // Optional: Push body down so fixed banner doesn't cover header
-                    document.body.style.paddingTop = banner.offsetHeight + 'px';
+                    // removed padding hack
                     
                     // Handle button clicks to remember state
                     linkSpan.addEventListener('click', function() {
