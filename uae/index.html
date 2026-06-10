@@ -122,6 +122,88 @@
             </style>
 </head>
 <body class="element-wrapper theme-uae">
+<!-- Geo-IP Detection Banner & Redirect -->
+<div id="geo-banner" style="display: none; background: #2467ec; color: white; padding: 14px 20px; font-weight: 500; font-size: 14px; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; line-height: 1.4;">
+    <div style="text-align: center; margin-bottom: 4px;">It looks like you're browsing from <span id="geo-country-name" style="font-weight: 700;">the UK 🇬🇧</span> — Would you like to view our <span id="geo-programs">UK</span> Programs?</div>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a id="geo-country-link" href="../uk/index.html" style="background: white; color: #2467ec; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 13px; display: inline-block; transition: all 0.3s; white-space: nowrap;">Yes, take me there</a>
+        <button onclick="document.getElementById('geo-banner').style.display='none'; sessionStorage.setItem('geo_banner_handled', 'true'); document.body.style.paddingTop='0';" style="background: transparent; border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; color: white; padding: 8px 20px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s; white-space: nowrap;">Stay on Global</button>
+    </div>
+</div>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" style="display: none; background: #1a1a1a; color: white; padding: 20px; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9998; box-shadow: 0 -4px 10px rgba(0,0,0,0.1); justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <span style="font-size: 14px; color: #ddd; max-width: 800px; text-align: center;">We use cookies to improve your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All Cookies", you agree to the storing of cookies on your device.</span>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button onclick="acceptCookies()" style="background: #00d084; color: #1a1a1a; border: none; padding: 8px 24px; border-radius: 30px; font-weight: 700; cursor: pointer; font-size: 14px; transition: background 0.3s; white-space: nowrap;">Accept All Cookies</button>
+        <button onclick="declineCookies()" style="background: transparent; border: 1px solid #777; color: #ddd; padding: 8px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.3s; white-space: nowrap;">Decline</button>
+    </div>
+</div>
+
+<script>
+    // Geo-IP Routing Banner Logic
+    fetch('https://get.geojs.io/v1/ip/country.json')
+        .then(res => res.json())
+        .then(data => {
+            const country = data.country;
+            
+            // Only show banner if we haven't already dismissed or accepted
+            if (!sessionStorage.getItem('geo_banner_handled')) {
+                const banner = document.getElementById('geo-banner');
+                const nameSpan = document.getElementById('geo-country-name');
+                const progSpan = document.getElementById('geo-programs');
+                const linkSpan = document.getElementById('geo-country-link');
+                
+                let showBanner = false;
+
+                if (country === 'GB') {
+                    nameSpan.innerText = 'the UK 🇬🇧';
+                    progSpan.innerText = 'UK';
+                    linkSpan.href = '../uk/index.html';
+                    showBanner = true;
+                } else if (country === 'US') {
+                    nameSpan.innerText = 'the USA 🇺🇸';
+                    progSpan.innerText = 'USA';
+                    linkSpan.href = '../us/index.html';
+                    showBanner = true;
+                } else if (country === 'AE' && false) {
+                    nameSpan.innerText = 'the UAE 🇦🇪';
+                    progSpan.innerText = 'UAE';
+                    linkSpan.href = '../uae/index.html';
+                    showBanner = true;
+                }
+
+                if (showBanner) {
+                    banner.style.display = 'flex';
+                    // Optional: Push body down so fixed banner doesn't cover header
+                    document.body.style.paddingTop = banner.offsetHeight + 'px';
+                    
+                    // Handle button clicks to remember state
+                    linkSpan.addEventListener('click', function() {
+                        sessionStorage.setItem('geo_banner_handled', 'true');
+                    });
+                }
+            }
+        })
+        .catch(err => console.log('Geo-IP error', err));
+
+    // Cookie Consent Logic
+    const cookieConsent = document.getElementById('cookie-consent');
+    if (!localStorage.getItem('cookies_accepted')) {
+        cookieConsent.style.display = 'flex';
+    }
+
+    function acceptCookies() {
+        localStorage.setItem('cookies_accepted', 'true');
+        cookieConsent.style.display = 'none';
+    }
+
+    function declineCookies() {
+        localStorage.setItem('cookies_accepted', 'false');
+        cookieConsent.style.display = 'none';
+    }
+</script>
+
 
 <!-- Start Preloader  -->
 <div id="preloader">
