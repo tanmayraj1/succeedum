@@ -489,6 +489,9 @@
             width: 200px !important;
             height: 200px !important;
         }
+        .boy-card {
+            left: 20px !important;
+        }
         .hero-float-badge {
             padding: 8px 12px !important;
         }
@@ -503,6 +506,47 @@
         .ed-hero__bottom {
             grid-template-columns: 1fr !important;
             gap: 15px !important;
+        }
+    }
+
+    @media only screen and (max-width: 767.99px) {
+        .hero-image-grid-container {
+            max-width: 100% !important;
+            height: 380px !important;
+        }
+        .girl-card {
+            width: 160px !important;
+            height: 160px !important;
+            right: 0 !important;
+            top: 0 !important;
+        }
+        .boy-card {
+            width: 160px !important;
+            height: 160px !important;
+            left: 0 !important;
+            bottom: 40px !important;
+        }
+        .hero-stats-card {
+            max-width: 170px !important;
+            bottom: -10px !important;
+            right: 0 !important;
+            padding: 10px !important;
+            transform: scale(0.9);
+            transform-origin: bottom right;
+        }
+        .hero-stats-card h5 {
+            font-size: 18px !important;
+        }
+        .hero-stats-card p {
+            font-size: 11px !important;
+        }
+        .hero-float-badge {
+            transform: scale(0.85);
+            transform-origin: left center;
+        }
+        .float-ani-1, .float-ani-2, .float-ani-3 {
+            /* reduce float movement on mobile */
+            animation-duration: 6s !important; 
         }
     }
     
