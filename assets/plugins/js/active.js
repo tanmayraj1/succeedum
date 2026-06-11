@@ -463,7 +463,7 @@
     let smoother = ScrollSmoother.create({
       smooth: 0.5,
       effects: true,
-      smoothTouch: 0.5,
+      smoothTouch: false,
       normalizeScroll: false,
       ignoreMobileResize: true,
     });
