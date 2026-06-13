@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://succeedum.org.uk/sitemap.xml
