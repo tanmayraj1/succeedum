@@ -52,6 +52,7 @@
 }
 .mobile-menu-modal.offcanvas-modal.modal.fade .modal-dialog {
   transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .mobile-menu-modal.offcanvas-modal.modal.show .modal-dialog {
   transform: translateX(0%);

@@ -27,9 +27,9 @@
           header.classList.add('sticky');
 
           if (window.innerWidth < 992) {
-            if (scroll > lastScroll + 5 && scroll > 150) {
+            if (scroll > lastScroll && scroll > 150) {
               header.classList.add('sticky-hide');
-            } else if (scroll < lastScroll - 5) {
+            } else if (scroll < lastScroll) {
               header.classList.remove('sticky-hide');
             }
           } else {
