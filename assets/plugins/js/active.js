@@ -19,7 +19,7 @@
       var ticking = false;
 
       function updateHeader() {
-        var scroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         if (scroll < 100) {
           header.classList.remove('sticky', 'sticky-hide');
@@ -40,12 +40,15 @@
         ticking = false;
       }
 
-      window.addEventListener('scroll', function() {
+      function onScroll() {
         if (!ticking) {
           requestAnimationFrame(updateHeader);
           ticking = true;
         }
-      }, { passive: true });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true, capture: true });
+      document.addEventListener('scroll', onScroll, { passive: true, capture: true });
       updateHeader();
     })();
 
