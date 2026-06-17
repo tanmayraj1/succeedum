@@ -90,6 +90,7 @@ body.modal-open,
 .modal {
   padding-right: 0 !important;
   overflow-x: hidden;
+  width: 100vw !important;
 }
 
 /* Custom Fonts  */
@@ -1035,7 +1036,7 @@ p {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 100vw !important;
   z-index: 9000;
   background: var(--ed-white-color);
 }
@@ -1048,11 +1049,11 @@ p {
 .ed-preloader .animation-preloader::after {
   position: absolute;
   left: 50%;
-  top: 35px;
+  top: 30px;
   content: "";
-  height: 40px;
-  width: 80px;
-  background: url(../images/succeedum-logo.png);
+  height: 50px;
+  width: 50px;
+  background: url(../images/favicon.svg);
   transform: translateX(-50%);
   background-repeat: no-repeat;
   background-position: center;
@@ -1078,7 +1079,7 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw !important;
   height: 100%;
   font-size: 0;
   z-index: 1;
