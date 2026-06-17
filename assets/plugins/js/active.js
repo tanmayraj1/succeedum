@@ -22,19 +22,9 @@
         var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         if (scroll < 100) {
-          header.classList.remove('sticky', 'sticky-hide');
+          header.classList.remove('sticky');
         } else {
           header.classList.add('sticky');
-
-          if (window.innerWidth < 992) {
-            if (scroll > lastScroll && scroll > 150) {
-              header.classList.add('sticky-hide');
-            } else if (scroll < lastScroll) {
-              header.classList.remove('sticky-hide');
-            }
-          } else {
-            header.classList.remove('sticky-hide');
-          }
         }
         lastScroll = scroll;
         ticking = false;
@@ -427,16 +417,20 @@
     }
   }
   gsap_ed_custom_cursor();
-  /*======================================================================================
+  jQuery(window).on("load", function () {
+    /*======================================================================================
     Preloader JS
-  =======================================================================================*/
-  var prealoaderOption = $(window);
-  prealoaderOption.on("load", function () {
+    =======================================================================================*/
     var preloader = jQuery(".ed-preloader");
     var preloaderArea = jQuery(".ed-preloader");
     preloader.fadeOut();
     preloaderArea.delay(350).fadeOut("slow");
   });
+
+  // Fail-safe: Force preloader to hide after 2 seconds just in case window.load hangs
+  setTimeout(function() {
+    jQuery(".ed-preloader").fadeOut("slow");
+  }, 2000);
 
   /*======================================================================================
     Smooth Scroll JS

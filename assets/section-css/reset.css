@@ -1048,11 +1048,11 @@ p {
 .ed-preloader .animation-preloader::after {
   position: absolute;
   left: 50%;
-  top: 30px;
+  top: 35px;
   content: "";
-  height: 50px;
-  width: 50px;
-  background: url(../images/favicon.svg);
+  height: 40px;
+  width: 80px;
+  background: url(../images/succeedum-logo.png);
   transform: translateX(-50%);
   background-repeat: no-repeat;
   background-position: center;

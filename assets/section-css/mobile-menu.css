@@ -81,6 +81,10 @@
   background: var(--ed-offwhite-color);
 }
 .mobile-menu-modal .offcanvas-header .btn-close {
+  position: absolute !important;
+  right: 20px !important;
+  top: 18px !important;
+  z-index: 1050;
   color: var(--ed-white-color);
   opacity: 1;
   width: 35px;
@@ -92,7 +96,6 @@
   background: #d73b3e;
   transition: all 0.4s ease;
   margin: 0;
-  float: right;
 }
 .mobile-menu-modal .offcanvas-header .btn-close:hover {
   background: var(--ed-secondary-color);
