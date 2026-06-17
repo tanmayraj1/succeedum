@@ -10,35 +10,44 @@
   "use strict";
   $(document).on("ready", function () {
     /*======================================================================================
-		  Header Sticky JS - Advanced Mobile Hide/Show
+		  Header Sticky JS - Native Scroll (immune to GSAP conflicts)
 	  =======================================================================================*/
-    var lastScroll = 0;
-    $(window).on("scroll", function (event) {
-      var scroll = $(window).scrollTop();
-      var header = $(".ed-header");
-      
-      if (scroll < 100) {
-        header.removeClass("sticky");
-        header.css({"transform": "", "transition": ""});
-      } else {
-        header.addClass("sticky");
-        
-        // Mobile-specific hide on scroll down, show on scroll up
-        if ($(window).width() < 992) {
-            if (scroll > lastScroll && scroll > 150) {
-                // Scrolling down -> hide
-                header.css({"transform": "translateY(-100%)", "transition": "transform 0.4s ease"});
-            } else {
-                // Scrolling up -> show
-                header.css({"transform": "translateY(0)", "transition": "transform 0.4s ease"});
-            }
+    (function() {
+      var header = document.querySelector('.ed-header');
+      if (!header) return;
+      var lastScroll = 0;
+      var ticking = false;
+
+      function updateHeader() {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        if (scroll < 100) {
+          header.classList.remove('sticky', 'sticky-hide');
         } else {
-            // Desktop -> always show when sticky
-            header.css({"transform": "translateY(0)", "transition": "transform 0.4s ease"});
+          header.classList.add('sticky');
+
+          if (window.innerWidth < 992) {
+            if (scroll > lastScroll + 5 && scroll > 150) {
+              header.classList.add('sticky-hide');
+            } else if (scroll < lastScroll - 5) {
+              header.classList.remove('sticky-hide');
+            }
+          } else {
+            header.classList.remove('sticky-hide');
+          }
         }
+        lastScroll = scroll;
+        ticking = false;
       }
-      lastScroll = scroll <= 0 ? 0 : scroll;
-    });
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      }, { passive: true });
+      updateHeader();
+    })();
 
     /*======================================================================================
       Wow JS
@@ -460,13 +469,15 @@
       nullTargetWarn: false,
     });
 
-    let smoother = ScrollSmoother.create({
-      smooth: 0.5,
-      effects: true,
-      smoothTouch: false,
-      normalizeScroll: false,
-      ignoreMobileResize: true,
-    });
+    if (window.innerWidth > 991) {
+      let smoother = ScrollSmoother.create({
+        smooth: 0.5,
+        effects: true,
+        smoothTouch: false,
+        normalizeScroll: false,
+        ignoreMobileResize: true,
+      });
+    }
   }
 
   /*======================================================================================
