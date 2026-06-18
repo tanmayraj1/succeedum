@@ -92,6 +92,10 @@ body.modal-open,
   overflow-x: hidden;
   width: 100vw !important;
 }
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 /* Custom Fonts  */
 @font-face {
