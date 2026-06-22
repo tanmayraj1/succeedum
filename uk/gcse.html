@@ -242,7 +242,65 @@
 </div>
 
 
-<header class="ed-header" style="background-color: #ffffff; position: relative; z-index: 99;">
+<div class="ed-topbar">
+<div class="container ed-container-expand">
+<div class="ed-topbar__inner">
+<!-- Logo  -->
+<div class="ed-topbar__logo">
+<a href="../index.html">
+<img alt="Succeedum Logo" src="../assets/images/succeedum-logo.png"/>
+</a>
+</div>
+<!-- Category Dropdown -->
+<div class="ed-topbar__search-widget">
+<div class="ed-topbar__category">
+<select onchange="if(this.value) window.location.href=this.value;">
+<option data-display="All Classes" value="../classes.html">All Classes</option>
+<option value="../class-prek.html">Pre-K &amp; Kindergarten</option>
+<option value="../class-primary.html">Primary School</option>
+<option value="../class-middle.html">Middle School</option>
+<option value="../class-high.html">High School</option>
+</select>
+</div>
+<div class="ed-topbar__search">
+<form action="#" method="post">
+<input name="search" placeholder="Search your Subjects" required="" type="search"/>
+<button type="submit">Search<i class="fi-rr-search"></i></button>
+</form>
+</div>
+</div>
+<!-- Topbar Info -->
+<div class="ed-topbar__info">
+<!-- Topbar Social -->
+<ul class="ed-topbar__info-social">
+<li>
+<a href="https://www.facebook.com/SucceedumIndia/" target="_blank"><img alt="icon-dark-facebook" src="../assets/images/icons/icon-dark-facebook.svg"/></a>
+</li>
+<li>
+<a href="https://www.twitter.com/" target="_blank"><img alt="icon-dark-twitter" src="../assets/images/icons/icon-dark-twitter.svg"/></a>
+</li>
+<li>
+<a href="https://www.dribbble.com/" target="_blank"><img alt="icon-dark-dribbble" src="../assets/images/icons/icon-dark-dribbble.svg"/></a>
+</li>
+<li>
+<a href="https://www.instagram.com/succeedumllp/" target="_blank"><img alt="icon-dark-instagram" src="../assets/images/icons/icon-dark-instagram.svg"/></a>
+</li>
+</ul>
+<!-- Topbar Button -->
+<div class="ed-topbar__info-buttons">
+<a href="../index.html" style="background:#f8f9fc; color:#1a1a1a; padding:10px 20px; border-radius:30px; font-weight:600; font-size:14px; text-decoration:none; margin-right:15px; border:1px solid #eaeaea;">🌍 Change Region</a><button class="register-btn" data-bs-target="#trialModal" data-bs-toggle="modal" type="button">Book a Free Trial</button>
+</div>
+<!-- Mobile Menu Button -->
+<a class="d-lg-none btn btn-sm me-3" href="../index.html" style="background:#f8f9fc; color:#1a1a1a; border-radius:20px; font-size:12px; font-weight:600; padding:8px 15px; border:1px solid #eaeaea;">🌍 Region</a><button class="mobile-menu-offcanvas-toggler" data-bs-target="#offcanvas-modal" data-bs-toggle="modal" type="button">
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</button>
+<!-- End Mobile Menu Button -->
+</div>
+</div>
+</div>
+</div><header class="ed-header" style="background-color: #ffffff; position: relative; z-index: 99;">
 <div class="container ed-container-expand">
 <div class="ed-header__inner">
 <div class="row align-items-center">
@@ -264,8 +322,6 @@
 <li><a href="../contact.html">Contact</a></li>
 </ul>
 </nav></div>
-<li><a href="../about.html">About Us</a></li>
-<li><a href="../contact.html">Contact</a></li>
 </div>
 <div class="col-lg-5 col-12">
 <!-- Header Right -->
@@ -543,15 +599,7 @@
 </div>
 </div>
 <!-- Single Info  -->
-<div class="ed-footer__contact">
-<div class="ed-footer__contact-icon">
-<img alt="icon-location-blue" src="../assets/images/icons/icon-location-blue.svg"/>
-</div>
-<div class="ed-footer__contact-info">
-<span>Our Location</span>
-<a href="#" target="_blank">Sector 80, Noida, UP 201305</a>
-</div>
-</div>
+
 </div>
 </div>
 <div class="col-lg-3 col-md-6 col-12">
@@ -668,7 +716,7 @@
     
 </script>
 <!-- Floating Phone Button -->
-<a class="phone-float" href="tel:+971569628668" style="position: fixed; width: 60px; height: 60px; bottom: 110px; right: 40px; background-color: #2467ec; color: #FFF; border-radius: 50px; text-align: center; font-size: 24px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+<a class="phone-float" href="tel:+447886070429" style="position: fixed; width: 60px; height: 60px; bottom: 110px; right: 40px; background-color: #2467ec; color: #FFF; border-radius: 50px; text-align: center; font-size: 24px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
 <i class="fi fi-rr-phone-call"></i>
 </a>
 <style>
