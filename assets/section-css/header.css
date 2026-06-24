@@ -730,3 +730,87 @@
 .ed-header__contact li a {
     white-space: nowrap !important;
 }
+
+/* Topbar Search Widget Intelligent Fixes */
+.ed-topbar__search-widget {
+  display: flex !important;
+  align-items: center !important;
+  background: var(--ed-white-color) !important;
+  border-radius: 52px !important;
+  border: 1px solid #ebebeb !important;
+  height: 50px !important;
+  overflow: visible !important;
+}
+
+.ed-topbar__category {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.ed-topbar__category::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 1px !important;
+  height: 20px !important;
+  background: #ebebeb !important;
+  z-index: 10 !important;
+}
+
+.ed-topbar__category .nice-select {
+  border: none !important;
+  background: transparent !important;
+  height: 100% !important;
+  line-height: 48px !important;
+  padding-left: 20px !important;
+  padding-right: 40px !important;
+  width: auto !important;
+  min-width: 160px !important;
+  border-radius: 52px 0 0 52px !important;
+}
+
+.ed-topbar__category .nice-select::after {
+  right: 15px !important;
+}
+
+.ed-topbar__search {
+  flex: 1 !important;
+  height: 100% !important;
+  width: auto !important;
+}
+
+.ed-topbar__search form {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.ed-topbar__search input {
+  border: none !important;
+  background: transparent !important;
+  height: 100% !important;
+  padding: 0 20px !important;
+  border-radius: 0 52px 52px 0 !important;
+  width: 100% !important;
+  min-width: 250px !important;
+}
+
+.ed-topbar__search button {
+  position: static !important;
+  height: 40px !important;
+  margin-right: 5px !important;
+  margin-left: auto !important;
+  padding: 0 20px !important;
+  border-radius: 52px !important;
+  background: var(--ed-primary-color) !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
