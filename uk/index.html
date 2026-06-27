@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="no-js" lang="ZXX">
 <head>
 <meta charset="utf-8"/>
@@ -68,13 +67,11 @@
             font-weight: bold;
             margin-left: 10px;
         }
-    
 .logo img { max-height: 50px !important; width: auto !important; }
     .ed-hero.ed-hero--style4 {
         height: auto !important;
         overflow: visible !important;
     }
-    
     @keyframes float1 {
         0% { transform: translateY(0px); }
         50% { transform: translateY(-10px); }
@@ -90,13 +87,9 @@
         50% { transform: translateY(-8px); }
         100% { transform: translateY(0px); }
     }
-
     .float-ani-1 { animation: float1 4s ease-in-out infinite; }
     .float-ani-2 { animation: float2 5s ease-in-out infinite; }
     .float-ani-3 { animation: float3 6s ease-in-out infinite; }
-    
-    
-    
 </style>
 <style id="mobile-compact-form-css">
             @media (max-width: 767px) {
@@ -112,7 +105,6 @@
                     height: 80px !important;
                 }
             }
-        
     @media (max-width: 991px) {
         .ed-hero.ed-hero--style4 { padding-top: 110px !important; }
         .ed-hero__content { margin-top: 0px !important; }
@@ -154,7 +146,6 @@
             max-width: 100vw;
             position: relative;
         }
-
     @media (max-width: 991px) {
         .ed-hero.ed-hero--style4 { padding-top: 110px !important; }
         .ed-hero__content { margin-top: 0px !important; }
@@ -171,7 +162,6 @@
             max-width: 100vw;
             position: relative;
         }
-
     @media (max-width: 991px) {
         .ed-hero.ed-hero--style4 { padding-top: 110px !important; }
         .ed-hero__content { margin-top: 0px !important; }
@@ -203,16 +193,13 @@
         .then(res => res.json())
         .then(data => {
             const country = data.country;
-            
             // Only show banner if we haven't already dismissed or accepted
             if (!sessionStorage.getItem('geo_banner_handled')) {
                 const banner = document.getElementById('geo-banner');
                 const nameSpan = document.getElementById('geo-country-name');
                 const progSpan = document.getElementById('geo-programs');
                 const linkSpan = document.getElementById('geo-country-link');
-                
                 let showBanner = false;
-
                 if (country === 'GB' && false) {
                     nameSpan.innerText = 'the UK 🇬🇧';
                     progSpan.innerText = 'UK';
@@ -234,12 +221,10 @@
                     linkSpan.href = 'ca/index.html';
                     showBanner = true;
                 }
-
                 if (showBanner) {
                     banner.style.display = 'flex';
                     // Optional: Push body down so fixed banner doesn't cover header
                     document.body.style.paddingTop = banner.offsetHeight + 'px';
-                    
                     // Handle button clicks to remember state
                     linkSpan.addEventListener('click', function() {
                         sessionStorage.setItem('geo_banner_handled', 'true');
@@ -248,18 +233,15 @@
             }
         })
         .catch(err => console.log('Geo-IP error', err));
-
     // Cookie Consent Logic
     const cookieConsent = document.getElementById('cookie-consent');
     if (!localStorage.getItem('cookies_accepted')) {
         cookieConsent.style.display = 'flex';
     }
-
     function acceptCookies() {
         localStorage.setItem('cookies_accepted', 'true');
         cookieConsent.style.display = 'none';
     }
-
     function declineCookies() {
         localStorage.setItem('cookies_accepted', 'false');
         cookieConsent.style.display = 'none';
@@ -426,7 +408,6 @@
 <!-- Start Hero Area -->
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    
     .ed-hero--style4 {
         font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
@@ -480,7 +461,6 @@
         background-color: rgba(12, 101, 237, 0.05);
         transform: translateY(-2px);
     }
-    
     /* Responsive overrides */
     @media only screen and (max-width: 991.99px) {
         .hero-image-grid-container {
@@ -511,7 +491,6 @@
             gap: 15px !important;
         }
     }
-
     @media only screen and (max-width: 767.99px) {
         .hero-image-grid-container {
             max-width: 100% !important;
@@ -555,12 +534,10 @@
             animation-duration: 6s !important; 
         }
     }
-    
     .ed-hero.ed-hero--style4 {
         height: auto !important;
         overflow: visible !important;
     }
-    
     @keyframes float1 {
         0% { transform: translateY(0px); }
         50% { transform: translateY(-10px); }
@@ -576,12 +553,9 @@
         50% { transform: translateY(-8px); }
         100% { transform: translateY(0px); }
     }
-
     .float-ani-1 { animation: float1 4s ease-in-out infinite; }
     .float-ani-2 { animation: float2 5s ease-in-out infinite; }
     .float-ani-3 { animation: float3 6s ease-in-out infinite; }
-    
-
     @media (max-width: 991px) {
         .ed-hero.ed-hero--style4 { padding-top: 110px !important; }
         .ed-hero__content { margin-top: 0px !important; }
@@ -683,11 +657,7 @@
 <span style="color: #0d6efd; font-size: 18px;"><i class="fi fi-rr-user"></i></span>
 <span style="font-weight: 700; font-size: 14px; color: #2c3e50;">GCSE &amp; A-Level Experts</span>
 </div>
-<!-- Float Badge 3 (Certified) -->
-<div class="hero-float-badge float-ani-2" style="position: absolute; top: 200px; left: 10px; background: #fff; padding: 10px 18px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 10px; z-index: 3;">
-<span style="color: #ff5c5c; font-size: 18px;"><i class="fi fi-rr-shield-check"></i></span>
-<span style="font-weight: 700; font-size: 14px; color: #2c3e50;">Ofqual Aligned</span>
-</div>
+
 <!-- Floating Statistics Card (Bottom Right) -->
 <div class="hero-stats-card float-ani-3" style="position: absolute; bottom: 30px; right: -10px; background: #fff; padding: 15px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 6px; z-index: 3; max-width: 220px;">
 <h5 style="font-weight: 800; font-size: 22px; color: #2c3e50; margin: 0;">1500+</h5>
@@ -1209,7 +1179,6 @@
                                                 </h3>
 </div>
 <form action="https://formsubmit.co/contact@succeedum.org" class="ed-contact__form-main" method="POST">
-
 <div class="row">
 <div class="col-lg-6 col-12">
 <div class="form-group">
@@ -2028,7 +1997,6 @@
 <div class="ed-footer__contact-info">
 <span>24/7 Support</span>
 <div style="display:flex; flex-direction:column; gap:8px; margin-top:4px;">
-<a href="tel:+971569628668" style="font-size:15px; line-height:1.4; display:block; white-space:nowrap;"><strong style="color:#2467ec; font-weight:600; margin-right:6px;">UAE:</strong>+971 56 962 8668</a>
 <a href="tel:+447886070429" style="font-size:15px; line-height:1.4; display:block; white-space:nowrap;"><strong style="color:#2467ec; font-weight:600; margin-right:6px;">UK:</strong>+44 7886 070429</a>
 </div>
 </div>
@@ -2044,7 +2012,6 @@
 </div>
 </div>
 <!-- Single Info  -->
-
 </div>
 </div>
 <div class="col-lg-3 col-md-6 col-12">
@@ -2055,7 +2022,6 @@
                                                 Enter your email address to register to our newsletter subscription
                                             </p>
 <form action="https://formsubmit.co/contact@succeedum.org" class="ed-footer__newsletter-form" method="POST">
-
 <input name="email" placeholder="Enter email" required="" type="email"/>
 <button class="ed-btn" type="submit">Subscribe Now<i class="fi fi-rr-arrow-small-right"></i></button>
 </form>
@@ -2103,7 +2069,6 @@
 <div class="ed-contact__info-content">
 <span>24/7 Support</span>
 <div style="display:flex; flex-direction:column; gap:8px; margin-top:4px;">
-<a href="tel:+971569628668" style="font-size:15px; line-height:1.4; display:block; white-space:nowrap;"><strong style="color:#2467ec; font-weight:600; margin-right:6px;">UAE:</strong>+971 56 962 8668</a>
 <a href="tel:+447886070429" style="font-size:15px; line-height:1.4; display:block; white-space:nowrap;"><strong style="color:#2467ec; font-weight:600; margin-right:6px;">UK:</strong>+44 7886 070429</a>
 </div>
 </div>
@@ -2151,7 +2116,6 @@
 <div class="ed-sidebar-widget">
 <h3 class="ed-sidebar-widget-title">Subscribe Now:</h3>
 <form action="https://formsubmit.co/contact@succeedum.org" class="ed-sidebar-subscribe" method="POST">
-
 <input name="email-address" placeholder="Enter email" required="" type="email"/>
 <button class="ed-btn" type="submit">Subscribe<i class="fi fi-rr-arrow-small-right"></i></button>
 </form>
@@ -2277,7 +2241,6 @@
         document.querySelectorAll('.trial-step').forEach(el => el.style.display = 'none');
         document.getElementById('trial-step-' + step).style.display = 'block';
     }
-    
 </script>
 <!-- Floating Phone Button -->
 <a class="phone-float" href="tel:+447886070429" style="position: fixed; width: 60px; height: 60px; bottom: 110px; right: 40px; background-color: #2467ec; color: #FFF; border-radius: 50px; text-align: center; font-size: 24px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
