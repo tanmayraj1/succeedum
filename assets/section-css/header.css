@@ -777,6 +777,30 @@
   right: 15px !important;
 }
 
+/* Native <select> fallback (inner pages that don't init nice-select) — keep the search pill unified */
+.ed-topbar__category select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  border: none !important;
+  background-color: transparent !important;
+  height: 48px !important;
+  line-height: 48px !important;
+  padding: 0 36px 0 20px !important;
+  margin: 0 !important;
+  min-width: 160px;
+  width: auto;
+  border-radius: 52px 0 0 52px !important;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(1, 28, 26, 0.75);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%23738281' stroke-width='1.6' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 11px;
+}
+
 .ed-topbar__search {
   flex: 1 !important;
   height: 100% !important;
