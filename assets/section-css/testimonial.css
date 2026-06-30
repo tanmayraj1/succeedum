@@ -191,6 +191,22 @@
   background: #fcebfe;
 }
 
+/* Equal-height testimonial cards (keep boxes even after removing avatars) */
+@media only screen and (min-width: 576px) {
+  .ed-testimonial__slider-2 .swiper-slide {
+    height: auto;
+    display: flex;
+  }
+  .ed-testimonial--style3 .ed-testimonial__slider-item {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .ed-testimonial--style3 .ed-testimonial__slider-item .ed-testimonial__author {
+    margin-top: auto;
+  }
+}
+
 /* Testimonial Style 4 */
 .ed-testimonial--style4 {
   position: relative;
