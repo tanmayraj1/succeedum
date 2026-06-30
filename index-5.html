@@ -192,56 +192,60 @@
 <div class="mobile-menu-modal-main-body">
 <!-- Mobile Menu Navigation -->
 <nav class="offcanvas__menu">
-<ul class="offcanvas__menu_ul" style="list-style: none; padding-left: 0;">
-    <li class="offcanvas__menu_li" style="margin-bottom: 10px;"><a class="offcanvas__menu_item" href="index.html" style="font-size: 18px; font-weight: 600; color: #1a1a1a;">Home</a></li>
-    
-    <li class="offcanvas__menu_li" style="margin-bottom: 10px;">
-        <a class="offcanvas__menu_item" data-bs-toggle="collapse" href="#collapseUK" role="button" aria-expanded="false" aria-controls="collapseUK" style="font-size: 18px; font-weight: 600; color: #1a1a1a; display: flex; justify-content: space-between;">
+<ul class="mobile-nav-list">
+    <li class="mobile-nav-item"><a class="mobile-nav-link" href="index.html">Home</a></li>
+    <li class="mobile-nav-item">
+        <a class="mobile-nav-link" data-bs-toggle="collapse" href="#collapseUK" role="button" aria-expanded="false" aria-controls="collapseUK">
             <span>🇬🇧 UK Programs</span> <i class="fi fi-rr-angle-small-down"></i>
         </a>
         <div class="collapse" id="collapseUK">
-            <ul style="list-style: none; padding-left: 15px; margin-top: 10px; border-left: 2px solid #f0f0f0;">
-                <li style="margin-bottom:8px;"><a href="uk/key-stage-1.html" style="color: #666;">Key Stage 1 & 2</a></li>
-                <li style="margin-bottom:8px;"><a href="uk/key-stage-3.html" style="color: #666;">Key Stage 3</a></li>
-                <li style="margin-bottom:8px;"><a href="uk/gcse.html" style="color: #666;">GCSE</a></li>
-                <li style="margin-bottom:8px;"><a href="uk/a-level.html" style="color: #666;">A-Levels</a></li>
-                <li><a href="uk/11-plus.html" style="color: #666;">11+ & Entrance</a></li>
+            <ul class="mobile-submenu">
+                <li><a href="uk/key-stage-1.html">Key Stage 1 &amp; 2</a></li>
+                <li><a href="uk/key-stage-3.html">Key Stage 3</a></li>
+                <li><a href="uk/gcse.html">GCSE</a></li>
+                <li><a href="uk/a-level.html">A-Levels</a></li>
+                <li><a href="uk/11-plus.html">11+ &amp; Entrance</a></li>
             </ul>
         </div>
     </li>
-
-    <li class="offcanvas__menu_li" style="margin-bottom: 10px;">
-        <a class="offcanvas__menu_item" data-bs-toggle="collapse" href="#collapseUS" role="button" aria-expanded="false" aria-controls="collapseUS" style="font-size: 18px; font-weight: 600; color: #1a1a1a; display: flex; justify-content: space-between;">
+    <li class="mobile-nav-item">
+        <a class="mobile-nav-link" data-bs-toggle="collapse" href="#collapseUS" role="button" aria-expanded="false" aria-controls="collapseUS">
             <span>🇺🇸 US Programs</span> <i class="fi fi-rr-angle-small-down"></i>
         </a>
         <div class="collapse" id="collapseUS">
-            <ul style="list-style: none; padding-left: 15px; margin-top: 10px; border-left: 2px solid #f0f0f0;">
-                <li style="margin-bottom:8px;"><a href="us/sat.html" style="color: #666;">SAT Prep</a></li>
-                <li style="margin-bottom:8px;"><a href="us/act.html" style="color: #666;">ACT Prep</a></li>
-                <li style="margin-bottom:8px;"><a href="us/calculus.html" style="color: #666;">Math & Calculus</a></li>
-                <li style="margin-bottom:8px;"><a href="us/reading-ela.html" style="color: #666;">Reading & ELA</a></li>
-                <li><a href="us/new-york-regents.html" style="color: #666;">State Exams</a></li>
+            <ul class="mobile-submenu">
+                <li><a href="us/sat.html">SAT Prep</a></li>
+                <li><a href="us/act.html">ACT Prep</a></li>
+                <li><a href="us/calculus.html">Math &amp; Calculus</a></li>
+                <li><a href="us/reading-ela.html">Reading &amp; ELA</a></li>
+                <li><a href="us/new-york-regents.html">State Exams</a></li>
             </ul>
         </div>
     </li>
-
-    <li class="offcanvas__menu_li" style="margin-bottom: 10px;">
-        <a class="offcanvas__menu_item" data-bs-toggle="collapse" href="#collapseUAE" role="button" aria-expanded="false" aria-controls="collapseUAE" style="font-size: 18px; font-weight: 600; color: #1a1a1a; display: flex; justify-content: space-between;">
+    <li class="mobile-nav-item">
+        <a class="mobile-nav-link" data-bs-toggle="collapse" href="#collapseCA" role="button" aria-expanded="false" aria-controls="collapseCA">
+            <span>🇨🇦 Canada Programs</span> <i class="fi fi-rr-angle-small-down"></i>
+        </a>
+        <div class="collapse" id="collapseCA">
+            <ul class="mobile-submenu">
+                <li><a href="ca/index.html">Canadian Curriculums</a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="mobile-nav-item">
+        <a class="mobile-nav-link" data-bs-toggle="collapse" href="#collapseUAE" role="button" aria-expanded="false" aria-controls="collapseUAE">
             <span>🇦🇪 UAE Programs</span> <i class="fi fi-rr-angle-small-down"></i>
         </a>
         <div class="collapse" id="collapseUAE">
-            <ul style="list-style: none; padding-left: 15px; margin-top: 10px; border-left: 2px solid #f0f0f0;">
-                <li style="margin-bottom:8px;"><a href="uae/british-curriculum.html" style="color: #666;">British Curriculum</a></li>
-                <li style="margin-bottom:8px;"><a href="uae/american-curriculum.html" style="color: #666;">American Curriculum</a></li>
-                <li style="margin-bottom:8px;"><a href="uae/ib-curriculum.html" style="color: #666;">IB Curriculum</a></li>
-                
-                
+            <ul class="mobile-submenu">
+                <li><a href="uae/british-curriculum.html">British Curriculum</a></li>
+                <li><a href="uae/american-curriculum.html">American Curriculum</a></li>
+                <li><a href="uae/ib-curriculum.html">IB Curriculum</a></li>
             </ul>
         </div>
     </li>
-
-    <li class="offcanvas__menu_li" style="margin-bottom: 10px;"><a class="offcanvas__menu_item" href="about.html" style="font-size: 18px; font-weight: 600; color: #1a1a1a;">About Us</a></li>
-    <li class="offcanvas__menu_li" style="margin-bottom: 10px;"><a class="offcanvas__menu_item" href="contact.html" style="font-size: 18px; font-weight: 600; color: #1a1a1a;">Contact</a></li>
+    <li class="mobile-nav-item"><a class="mobile-nav-link" href="about.html">About Us</a></li>
+    <li class="mobile-nav-item" style="border-bottom:none;"><a class="mobile-nav-link" href="contact.html">Contact</a></li>
 </ul>
 </nav>
 </div>
