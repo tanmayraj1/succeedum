@@ -828,32 +828,28 @@
 
 /* Mobile Header Optimization */
 @media (max-width: 991px) {
+  .ed-topbar {
+    padding: 14px 0 !important;
+  }
   .ed-topbar__inner {
     flex-wrap: wrap;
-    gap: 15px;
+    align-items: center;
+    gap: 14px;
   }
-  .ed-topbar__search-widget {
-    flex-direction: column;
-    border-radius: 12px;
-    width: 100%;
-    margin-top: 10px;
-    order: 3; /* Move search below logo and hamburger */
+  /* Logo on the left, hamburger pushed to the right */
+  .ed-topbar__logo {
+    order: 1;
   }
-  .ed-topbar__category {
-    width: 100%;
-    border-bottom: 1px solid #ebebeb;
-  }
-  .ed-topbar__category::before {
-    display: none;
-  }
-  .ed-topbar__search {
-    width: 100%;
-  }
-  .ed-topbar__search input {
-    border-radius: 0 0 12px 12px;
+  .ed-topbar__info {
+    order: 2;
+    margin-left: auto;
+    gap: 0;
   }
   .mobile-menu-offcanvas-toggler {
-    order: 2; /* Keep hamburger inline with logo */
     margin-left: auto;
+  }
+  /* Search is not needed on mobile — hide the whole widget */
+  .ed-topbar__search-widget {
+    display: none !important;
   }
 }
