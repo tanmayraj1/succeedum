@@ -69,6 +69,21 @@
             position: relative;
         }
     </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1639147300509579');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1639147300509579&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 
 
@@ -609,5 +624,20 @@
 }
 .phone-float:hover { background-color: #1a1a1a; color: white; }
 </style>
+<!-- Meta Pixel custom events -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  if(typeof fbq!=='function')return;
+  document.body.addEventListener('click',function(e){
+    if(e.target.closest('a[href*="wa.me"],a[href*="api.whatsapp.com"],a[href*="whatsapp.com"]')){fbq('track','Contact');}
+    if(e.target.closest('button[onclick*="nextTrialStep(3)"]')){fbq('track','CompleteRegistration');}
+  });
+  document.body.addEventListener('submit',function(e){
+    var f=e.target;
+    if(f && (f.id==='demoPopupForm' || (f.classList && f.classList.contains('ed-contact__form-main')))){fbq('track','Lead');}
+  });
+});
+</script>
+<!-- End Meta Pixel custom events -->
 </body>
 </html>
