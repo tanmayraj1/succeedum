@@ -580,7 +580,42 @@ fbq('track', 'PageView');
 <!-- Custom Scripts for New UI -->
 <script>
     function nextTrialStep(step) {
-        document.querySelectorAll('.trial-step').forEach(el => el.style.display = 'none');
+        var modal = document.getElementById('trialModal');
+        if (step > 1 && modal) {
+            var cur = modal.querySelector('#trial-step-' + (step - 1));
+            if (cur) {
+                var els = cur.querySelectorAll('input, select');
+                for (var i = 0; i < els.length; i++) {
+                    var el = els[i], empty;
+                    if (el.tagName === 'SELECT') { var o = el.options[el.selectedIndex]; empty = !el.value || (o && o.disabled); }
+                    else { empty = !el.value.trim(); }
+                    if (empty) { el.style.borderColor = '#e53e3e'; el.focus(); return false; }
+                    el.style.borderColor = '';
+                }
+            }
+        }
+        if (step === 3 && modal) {
+            try {
+                var g = function (sel) { var e = modal.querySelector(sel); return e ? (e.value || '').trim() : ''; };
+                var s1sel = modal.querySelectorAll('#trial-step-1 select');
+                var s2sel = modal.querySelectorAll('#trial-step-2 select');
+                var data = {
+                    Name: g('#trial-step-1 input[placeholder="Student Name"]'),
+                    'Country Code': s1sel[0] ? s1sel[0].value : '',
+                    Phone: g('#trial-step-1 input[placeholder="Phone Number"]'),
+                    Class: s1sel[1] ? s1sel[1].value : '',
+                    Message: g('#trial-step-1 textarea'),
+                    'Preferred Date': g('#trial-step-2 input[type=date]'),
+                    'Preferred Time': g('#trial-step-2 input[type=time]'),
+                    Language: s2sel[0] ? s2sel[0].value : '',
+                    Source: 'Book Your Free Trial (modal)',
+                    _subject: 'New Free Trial Booking - Succeedum',
+                    _template: 'table', _captcha: 'false'
+                };
+                fetch('https://formsubmit.co/ajax/contact@succeedum.org', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) }).catch(function(){});
+            } catch (e) {}
+        }
+        document.querySelectorAll('.trial-step').forEach(function (el) { el.style.display = 'none'; });
         document.getElementById('trial-step-' + step).style.display = 'block';
     }
     
@@ -610,5 +645,113 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 <!-- End Meta Pixel custom events -->
+
+<!-- Multi-Step Trial Modal (injected) -->
+<div aria-hidden="true" aria-labelledby="trialModalLabel" class="modal fade" id="trialModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content" style="border-radius: 20px; overflow: hidden; border: none; box-shadow: 0 20px 50px rgba(0,0,0,0.2);">
+<div class="modal-header" style="background: #1a1a1a; color: white; border-bottom: none; padding: 25px 30px;">
+<h5 class="modal-title" id="trialModalLabel" style="font-weight: 700; color: #ffffff !important;">Book Your Free Trial</h5>
+<button aria-label="Close" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" style="padding: 30px;">
+<!-- Step 1 -->
+<div class="trial-step" id="trial-step-1">
+<h6 style="margin-bottom: 20px; color: #444;">Step 1: Your Details</h6>
+<div class="mb-3"><input class="form-control" placeholder="Student Name" style="border-radius: 10px; height: 50px;" type="text"/></div>
+<div class="mb-3" style="display:flex; gap:8px;"><select class="form-control" aria-label="Country code" style="border-radius: 10px; height: 50px; max-width: 120px; flex: 0 0 auto;"><option value="+1">US/CA +1</option><option value="+44">UK +44</option><option value="+971">UAE +971</option></select><input class="form-control" placeholder="Phone Number" style="border-radius: 10px; height: 50px;" type="tel"/></div>
+<div class="mb-3">
+<select class="form-select" style="border-radius: 10px; height: 50px;">
+<option disabled="" selected="">Select Class</option>
+<option>Pre-K</option>
+<option>Kindergarten</option>
+<option>Class 1</option>
+<option>Class 2</option>
+<option>Class 3</option>
+<option>Class 4</option>
+<option>Class 5</option>
+<option>Class 6</option>
+<option>Class 7</option>
+<option>Class 8</option>
+<option>Class 9</option>
+<option>Class 10</option>
+<option>Class 11</option>
+<option>Class 12</option>
+</select>
+</div>
+<div class="mb-3"><textarea class="form-control" placeholder="Message or Special Needs" style="border-radius: 10px; height: 80px;"></textarea></div>
+<button class="btn w-100" onclick="nextTrialStep(2)" style="background: #2467ec; color: white; border-radius: 30px; height: 50px; font-weight: 600;">Next Step <i class="fi fi-rr-arrow-small-right"></i></button>
+</div>
+<!-- Step 2 -->
+<div class="trial-step" id="trial-step-2" style="display: none;">
+<h6 style="margin-bottom: 20px; color: #444;">Step 2: Scheduling</h6>
+<div class="mb-3">
+<label style="font-size: 14px; color: #666; margin-bottom: 5px;">Preferred Date</label>
+<input class="form-control" style="border-radius: 10px; height: 50px;" type="date"/>
+</div>
+<div class="mb-3">
+<label style="font-size: 14px; color: #666; margin-bottom: 5px;">Preferred Time</label>
+<input class="form-control" style="border-radius: 10px; height: 50px;" type="time"/>
+</div>
+<div class="mb-4" style="clear: both; width: 100%;">
+<select class="form-select" style="border-radius: 10px; height: 50px; width: 100%; display: block;">
+<option disabled="" selected="">Language Mode</option>
+<option>English</option>
+<option>Hindi</option>
+<option>Bilingual (Eng + Hin)</option>
+</select>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-between mt-3" style="clear: both; width: 100%;">
+<button class="btn btn-light w-100" onclick="nextTrialStep(1)" style="border-radius: 30px; height: 50px; font-weight: 600;">Back</button>
+<button class="btn w-100" onclick="nextTrialStep(3)" style="background: #2467ec; color: white; border-radius: 30px; height: 50px; font-weight: 600;">Submit Trial</button>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="trial-step text-center" id="trial-step-3" style="display: none; padding: 20px 0;">
+<div style="width: 80px; height: 80px; background: #2ecc71; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 20px;">
+<i class="fi fi-rr-check"></i>
+</div>
+<h4 style="font-weight: 700; margin-bottom: 10px;">Booking Confirmed!</h4>
+<p style="color: #666; margin-bottom: 30px;">Thank you for scheduling your free trial. One of our experts will contact you shortly to confirm the details.</p>
+<button class="btn w-100" data-bs-dismiss="modal" style="background: #1a1a1a; color: white; border-radius: 30px; height: 50px; font-weight: 600;">Close Window</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Multi-Step Trial Modal -->
+<!-- Trial modal opener (fallback for pages without Bootstrap JS) -->
+<script>
+(function(){
+  function ready(fn){ if(document.readyState!=='loading'){fn();} else {document.addEventListener('DOMContentLoaded', fn);} }
+  ready(function(){
+    var modal=document.getElementById('trialModal');
+    if(!modal) return;
+    if(window.bootstrap && window.bootstrap.Modal) return; // Bootstrap already handles it
+    var backdrop=null;
+    function open(){
+      modal.classList.add('show'); modal.style.display='block';
+      modal.removeAttribute('aria-hidden'); modal.setAttribute('aria-modal','true');
+      document.body.style.overflow='hidden';
+      backdrop=document.createElement('div'); backdrop.className='modal-backdrop fade show';
+      document.body.appendChild(backdrop); backdrop.addEventListener('click', close);
+    }
+    function close(){
+      modal.classList.remove('show'); modal.style.display='none';
+      modal.setAttribute('aria-hidden','true'); modal.removeAttribute('aria-modal');
+      document.body.style.overflow='';
+      if(backdrop){ backdrop.remove(); backdrop=null; }
+    }
+    document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#trialModal"]').forEach(function(t){
+      t.addEventListener('click', function(e){ e.preventDefault(); open(); });
+    });
+    modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach(function(b){
+      b.addEventListener('click', function(e){ e.preventDefault(); close(); });
+    });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('show')) close(); });
+  });
+})();
+</script>
+<!-- End Trial modal opener -->
 </body>
 </html>

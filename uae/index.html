@@ -2259,7 +2259,42 @@ e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
 <!-- Custom Scripts for New UI -->
 <script>
     function nextTrialStep(step) {
-        document.querySelectorAll('.trial-step').forEach(el => el.style.display = 'none');
+        var modal = document.getElementById('trialModal');
+        if (step > 1 && modal) {
+            var cur = modal.querySelector('#trial-step-' + (step - 1));
+            if (cur) {
+                var els = cur.querySelectorAll('input, select');
+                for (var i = 0; i < els.length; i++) {
+                    var el = els[i], empty;
+                    if (el.tagName === 'SELECT') { var o = el.options[el.selectedIndex]; empty = !el.value || (o && o.disabled); }
+                    else { empty = !el.value.trim(); }
+                    if (empty) { el.style.borderColor = '#e53e3e'; el.focus(); return false; }
+                    el.style.borderColor = '';
+                }
+            }
+        }
+        if (step === 3 && modal) {
+            try {
+                var g = function (sel) { var e = modal.querySelector(sel); return e ? (e.value || '').trim() : ''; };
+                var s1sel = modal.querySelectorAll('#trial-step-1 select');
+                var s2sel = modal.querySelectorAll('#trial-step-2 select');
+                var data = {
+                    Name: g('#trial-step-1 input[placeholder="Student Name"]'),
+                    'Country Code': s1sel[0] ? s1sel[0].value : '',
+                    Phone: g('#trial-step-1 input[placeholder="Phone Number"]'),
+                    Class: s1sel[1] ? s1sel[1].value : '',
+                    Message: g('#trial-step-1 textarea'),
+                    'Preferred Date': g('#trial-step-2 input[type=date]'),
+                    'Preferred Time': g('#trial-step-2 input[type=time]'),
+                    Language: s2sel[0] ? s2sel[0].value : '',
+                    Source: 'Book Your Free Trial (modal)',
+                    _subject: 'New Free Trial Booking - Succeedum',
+                    _template: 'table', _captcha: 'false'
+                };
+                fetch('https://formsubmit.co/ajax/contact@succeedum.org', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) }).catch(function(){});
+            } catch (e) {}
+        }
+        document.querySelectorAll('.trial-step').forEach(function (el) { el.style.display = 'none'; });
         document.getElementById('trial-step-' + step).style.display = 'block';
     }
     
@@ -2343,5 +2378,38 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 <!-- End Meta Pixel custom events -->
+<!-- Trial modal opener (fallback for pages without Bootstrap JS) -->
+<script>
+(function(){
+  function ready(fn){ if(document.readyState!=='loading'){fn();} else {document.addEventListener('DOMContentLoaded', fn);} }
+  ready(function(){
+    var modal=document.getElementById('trialModal');
+    if(!modal) return;
+    if(window.bootstrap && window.bootstrap.Modal) return; // Bootstrap already handles it
+    var backdrop=null;
+    function open(){
+      modal.classList.add('show'); modal.style.display='block';
+      modal.removeAttribute('aria-hidden'); modal.setAttribute('aria-modal','true');
+      document.body.style.overflow='hidden';
+      backdrop=document.createElement('div'); backdrop.className='modal-backdrop fade show';
+      document.body.appendChild(backdrop); backdrop.addEventListener('click', close);
+    }
+    function close(){
+      modal.classList.remove('show'); modal.style.display='none';
+      modal.setAttribute('aria-hidden','true'); modal.removeAttribute('aria-modal');
+      document.body.style.overflow='';
+      if(backdrop){ backdrop.remove(); backdrop=null; }
+    }
+    document.querySelectorAll('[data-bs-toggle="modal"][data-bs-target="#trialModal"]').forEach(function(t){
+      t.addEventListener('click', function(e){ e.preventDefault(); open(); });
+    });
+    modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach(function(b){
+      b.addEventListener('click', function(e){ e.preventDefault(); close(); });
+    });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('show')) close(); });
+  });
+})();
+</script>
+<!-- End Trial modal opener -->
 </body>
 </html>
