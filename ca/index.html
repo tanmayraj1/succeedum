@@ -213,7 +213,8 @@ fbq('track', 'PageView');
 <div id="geo-banner" style="display: none; background: #2467ec; color: white; padding: 14px 20px; font-weight: 500; font-size: 14px; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; line-height: 1.4;">
 <div style="text-align: center; margin-bottom: 4px;">It looks like you're browsing from <span id="geo-country-name" style="font-weight: 700;">the UK 🇬🇧</span> — Would you like to view our <span id="geo-programs">UK</span> Programs?</div>
 <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-<button onclick="document.getElementById('geo-banner').style.display='none'; sessionStorage.setItem('geo_banner_handled', 'true'); document.body.style.paddingTop='0';" style="background: transparent; border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; color: white; padding: 8px 20px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s; white-space: nowrap;">Stay on Global</button>
+<a href="../uk/index.html" id="geo-country-link" style="background: white; color: #2467ec; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 13px; display: inline-block; transition: all 0.3s; white-space: nowrap;">Yes, take me there</a>
+<button onclick="document.getElementById('geo-banner').style.display='none'; sessionStorage.setItem('geo_banner_handled', 'true'); document.body.style.paddingTop='0';" style="background: transparent; border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; color: white; padding: 8px 20px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s; white-space: nowrap;">Stay here</button>
 </div>
 </div>
 <!-- Cookie Consent Banner -->
@@ -245,22 +246,18 @@ fbq('track', 'PageView');
                     progSpan.innerText = 'UK';
                     linkSpan.href = '../uk/index.html';
                     showBanner = true;
-                } else if (country === 'US' && false) {
-                    nameSpan.innerText = 'the Canada 🇨🇦';
-                    progSpan.innerText = 'Canada';
-                    linkSpan.href = '../ca/index.html';
+                } else if (country === 'US') {
+                    nameSpan.innerText = 'the USA 🇺🇸';
+                    progSpan.innerText = 'USA';
+                    linkSpan.href = '../us/index.html';
                     showBanner = true;
                 } else if (country === 'AE') {
                     nameSpan.innerText = 'the UAE 🇦🇪';
                     progSpan.innerText = 'UAE';
                     linkSpan.href = '../uae/index.html';
                     showBanner = true;
-                } else if (country === 'CA') {
-                    nameSpan.innerText = 'Canada 🇨🇦';
-                    progSpan.innerText = 'Canadian';
-                    linkSpan.href = 'ca/index.html';
-                    showBanner = true;
                 }
+                // Canadian visitors are already on the Canada page — no prompt.
 
                 if (showBanner) {
                     banner.style.display = 'flex';
