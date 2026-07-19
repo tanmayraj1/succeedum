@@ -529,7 +529,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
   document.body.addEventListener('submit',function(e){
     var f=e.target;
-    if(f && (f.id==='demoPopupForm' || (f.classList && f.classList.contains('ed-contact__form-main')))){fbq('track','Lead');}
+    if(!f)return;if(f.id==='demoPopupForm'){fbq('track','Lead');return;}if(f.classList && f.classList.contains('ed-contact__form-main')){if(f.getAttribute('data-lead-sent'))return;e.preventDefault();f.setAttribute('data-lead-sent','1');try{fbq('track','Lead');}catch(_){}setTimeout(function(){HTMLFormElement.prototype.submit.call(f);},400);}
   });
 });
 </script>
